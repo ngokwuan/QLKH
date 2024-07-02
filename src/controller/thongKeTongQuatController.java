@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
-import model.sanPham;
+import model.TonKho;
 import model.tktq;
 import view.baoCaoView;
 import DAO.thongKeTongQuatDAO;
@@ -73,9 +73,9 @@ public class thongKeTongQuatController {
   		
   		int tongTonKho=0;
   		
-              ArrayList<sanPham> list = tktqDAO.getList();
-              for (sanPham record : list) {
-                  tongTonKho += record.getTonKho();
+              ArrayList<TonKho> list = tktqDAO.getList();
+              for (TonKho record : list) {
+                  tongTonKho += record.getSoLuongTon();
                  
                   
               

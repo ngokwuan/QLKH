@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class bcct {
     private int Nam;
     private int Thang;

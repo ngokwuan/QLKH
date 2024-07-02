@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import model.tktq;
-import model.sanPham;
+import model.TonKho;
 
 public class thongKeTongQuatDAO {
     private static final Logger LOGGER = Logger.getLogger(thongKeTongQuatDAO.class.getName());
@@ -50,30 +50,26 @@ public class thongKeTongQuatDAO {
         return list;
     }
     
-    public ArrayList<sanPham> getList() {
-        ArrayList<sanPham> list = new ArrayList<>();
-        String query = "SELECT * FROM sanpham";
+    public ArrayList<TonKho> getList() {
+        ArrayList<TonKho> list = new ArrayList<>();
+        String query = "SELECT * FROM tonkho ";
         Connection conn = myConnect.openConnectDB();
         if (conn != null) {
             try (PreparedStatement statement = conn.prepareStatement(query);
                  ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    int maSP = resultSet.getInt("MaSP");
-                    String tenSP = resultSet.getString("TenSP");
-                    int soLuongNhap = resultSet.getInt("SoLuongNhap");
-                    int tonKho = resultSet.getInt("TonKho");
-                    float giaSP = parseFloatWithoutComma(resultSet.getString("GiaSP"));
-                    String ngayXuat = resultSet.getString("NgayXuat");
+    
+                    int tonKho = resultSet.getInt("soLuongTon");
+                    
 
-                    sanPham sp = new sanPham();
-                    sp.setMaSP(maSP);
-                    sp.setTenSP(tenSP);
-                    sp.setSoLuongNhap(soLuongNhap);
-                    sp.setTonKho(tonKho);
-                    sp.setGiaSP(giaSP);
+                    TonKho tk = new TonKho();
+                    tk.setSoLuongTon(tonKho);
+                    
+                    
+                    
              
 
-                    list.add(sp);
+                    list.add(tk);
                 }
                 LOGGER.log(Level.INFO, "Data retrieval successful");
             } catch (SQLException e) {

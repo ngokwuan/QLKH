@@ -79,10 +79,16 @@ public class baoCaoView {
     }
 
    
+	
+
+
 	protected void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
 
 
 	/**
@@ -215,7 +221,7 @@ public class baoCaoView {
         buttonKH.setFont(new Font("Tahoma", Font.PLAIN, 20));
         labelPanel.add(buttonKH);
 
-        Button buttonNV = new Button("Nhân viên: " + 44);
+        Button buttonNV = new Button("Nhân viên: " + 6);
         buttonNV.setPreferredSize(new Dimension(200, 100));
         buttonNV.setForeground(new Color(255, 255, 255));
         buttonNV.setBackground(new Color(0, 128, 192));
